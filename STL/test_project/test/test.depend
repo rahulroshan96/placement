@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1444052705 source:/home/rahul/placement/STL/test_project/test/main.cpp
+	<iostream>
+	<queue>
+	<vector>
+

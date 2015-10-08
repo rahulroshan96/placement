@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1438079939 source:/home/rahul/placement/hackerrank/hackerrank/main.c
+	<stdio.h>
+	<stdlib.h>
+

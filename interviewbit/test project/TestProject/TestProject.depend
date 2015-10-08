@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1443355747 source:/home/rahul/placement/interviewbit/test project/TestProject/main.cpp
+	<cmath>
+	<cstdio>
+	<vector>
+	<iostream>
+	<algorithm>
+
