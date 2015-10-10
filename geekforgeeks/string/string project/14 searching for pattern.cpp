@@ -46,7 +46,7 @@ void find_pattern(string &s1, string &s2)
     }
     }
 }
-
+// done
 int main()
 {
     string s1("aaaaaaaa");
