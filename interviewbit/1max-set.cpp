@@ -1,156 +1,83 @@
-#include <iostream>
-#include <vector>
-#include <algorithm>
-#include <vector>
+#include<iostream>
+#include<vector>
+#include<array>
+
+
+
 using namespace std;
 
 int main()
 {
-    int Z[7] = { 1, 2, 5, -7, 2, 5};
-
-
-    vector <int> A(Z,Z+sizeof(Z)/sizeof(int));
-
-    int sum=0,sum1=0,length=0,length1=0,index=0,index1=0;
-
-    int i;
-    for(i=0;i<A.size();i++)
+    int A[]={-2,1,2,3,-7,1,5};
+    int csum=0,sum=0;
+    int i=0;
+    int m=0,n=0;
+    int x=0,y=0;
+    int size = sizeof(A)/sizeof(int);
+    while(i<size)
     {
-        if(A[i]>=0)
+        if(A[i]>-1)
         {
-            if(A[i-1]<0) index1 = i;
-            sum1 += A[i];
-            length1++;
+
+            csum+=A[i];
+
+
+            if(csum == sum)
+            {
+                if(csum > sum)
+                {
+                    sum = csum;
+                    n=y;
+                    m=x;
+                }
+                else
+                {
+                    if((y-x)>(n-m))
+                    {
+                        n=y;
+                        m=x;
+                    }
+                }
+            }
+            else
+            {
+                if(csum > sum)
+                {
+                    sum = csum;
+                    n=y;
+                    m=x;
+                }
+            }
+            y++;
+
+
         }
         else
         {
-            if(sum1 == sum) // sum is tie
-            {
-
-                if(length1 == length) // length is tie
-                {
-                    if(index1 > index) // if local index is less then global index
-                    {
-                        index = index1;
-                        sum = sum1;
-                        length = length1;
-                        sum1=0;
-
-
-                    }
-                    else
-                    {
-                        // do nothing
-                    }
-                }
-                else // length is not tie
-                {
-                    if(length1 > length)
-                    {
-                        index = index1;
-                        sum = sum1;
-                        length = length1;
-                        sum1=0;
-                        length1 = 0;
-
-                    }
-                    else
-                    {
-                        //do nothing
-                    }
-                }
-            }
-            else // sum is not tie
-            {
-
-                if(sum1 > sum)
-                {
-                       index = index1;
-                        sum = sum1;
-                        length = length1;
-                        sum1=0;
-
-                        length1=0;
-
-                }
-                else
-                {
-                    //do nothing
-
-                }
-            }
-
+            csum=0;
+            x=i+1;
+            y=i+1;
 
         }
+        i++;
     }
+    for(int i =m;i<=n;i++)
+    cout<<A[i]<<" ";
 
-    if(i==A.size())
+    //int *B = (int *)malloc((n-m+1)*sizeof(int));
+    //int *B=allocate((n-m+1));
+    /*
+    int *B;
+    int t = (n-m+1);
+    B = (int*)calloc (t,sizeof(int));
+    int l=0;
+    int j=0;
+    for(l=m;l<=n;l++)
     {
-        if(sum1 == sum) // sum is tie
-            {
-
-                if(length1 == length) // length is tie
-                {
-                    if(index1 > index) // if local index is less then global index
-                    {
-                        index = index1;
-                        sum = sum1;
-                        length = length1;
-                        sum1=0;
-
-
-                    }
-                    else
-                    {
-                        // do nothing
-                    }
-                }
-                else // length is not tie
-                {
-                    if(length1 > length)
-                    {
-                        index = index1;
-                        sum = sum1;
-                        length = length1;
-                        sum1=0;
-                        length1 = 0;
-
-                    }
-                    else
-                    {
-                        //do nothing
-                    }
-                }
-            }
-            else // sum is not tie
-            {
-
-                if(sum1 > sum)
-                {
-                       index = index1;
-                        sum = sum1;
-                        length = length1;
-                        sum1=0;
-
-                        length1=0;
-
-                }
-                else
-                {
-                    //do nothing
-
-                }
-            }
-
-
+        B[j] = A[l];
+        cout<<B[j]<<" ";
+        j++;
     }
-
-    int m = index;
-    while(A[m]>=0 && m<A.size())
-    {
-      //  printf("%d ",A[m]);
-        cout<<A[m]<<' ';
-        m++;
-    }
+*/
     return 0;
 }
