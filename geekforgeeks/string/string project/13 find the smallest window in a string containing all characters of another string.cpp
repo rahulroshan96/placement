@@ -4,7 +4,7 @@
 using namespace std;
 int main()
 {
-    string s1("abcdefghij");
+    string s1("abccfidefghi");
     string s2("cfi");
 
     vector<int> htble(256,0);
