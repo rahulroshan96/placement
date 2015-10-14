@@ -1,0 +1,44 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */  
+    
+    int n;
+    string s;
+    cin>>n;
+    vector<string> myv;
+   
+    while(n--)
+        {
+        
+        cin>>s;
+        myv.push_back(s);
+    }
+    for(int i=1;i<myv.size()-1;++i) // for(int i=1;i<myv.size()-1;++i) if we change myv.size() to n then it will show garbage output
+    {
+        for(int j=1;j<myv[i].size()-1;++j)
+        {
+            if(myv[i][j] > myv[i][j-1] && myv[i][j] > myv[i][j+1] && myv[i][j] > myv[i-1][j] && myv[i][j] > myv[i+1][j])
+            myv[i][j] = 'X';
+        }
+    }
+    
+    
+    for(int i=0;i<myv.size();i++)
+    {
+        for(int j=0;j<myv.size();j++)
+        cout<<myv[i][j];
+        cout<<endl;
+    }
+    
+    
+    
+    
+    return 0;
+}
