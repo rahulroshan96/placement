@@ -42,6 +42,7 @@ int Matrix(int P[],int n)
     }
     cout<<endl;
     }
+    cout<<"Optimal number of multiplications would be "<<M[1][4]; // check this one more time 
     
 }
 
