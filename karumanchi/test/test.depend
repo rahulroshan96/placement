@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1445622595 source:/home/rahul/Git/placement/karumanchi/test/main.cpp
+	<iostream>
+	<vector>
+	<list>
+	<queue>
+

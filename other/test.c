@@ -1,29 +1,31 @@
-#include <stdio.h>
-#include <stdlib.h>
-
-int compfunc( const void *a, const void *b)
-{
-	return ( *(int*)a - *(int*)b);
-}
-
+#include <iostream>
+#include <vector>
+#include <list>
+using namespace std;
 int main()
 {
-	int array[] = {9,8,7,4,5,6,3,2,1};
+    int T;
+    cin>>T;
+    while(T--)
+    {
+        int x,y,N,M;
+        cin>>N>>M;
+        vector<list<int> > myG(N+1);
+        for(int i=0;i<M;i++)
+        {
+            cin>>x>>y;
+            myG[x].push_back(y);
+            myG[y].push_back(x);
+        }
 
-int size = sizeof(array)/sizeof(array[0]);
-
-	qsort(array, size, sizeof(int), compfunc);
-
-	
-
-	int i=0;
-	while(i< (sizeof(array)/sizeof(array[0])))
-	{
-		printf("%d ",array[i]);
-		i++;
-	}
-
-	return 0;
-
-
+        for(int i=0;i<N;i++)
+        {
+            vector< list<int> >::iterator it=myG[i].begin();
+            cout<<i<<" is adjacent to vertexes ";
+            for(;it!=myG[i].end();++it)
+            cout<<*it<<" ";
+            cout<<endl;
+        }
+    }
+    return 0;
 }
