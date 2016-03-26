@@ -1,3 +1,6 @@
+// This Dijkstra algo works exactly same as the adjacency list dijkstra algo.
+// But this mot**rfu**er don't work for multiple edges :X this cost me huge amount of time f**k this limitation
+// will back on this limitation but not now !!
 #include <iostream>
 #include <vector>
 #include <queue>
