@@ -188,14 +188,14 @@ int main()
 		// else cout<<"No loop is not detected";
 
 	/*Merge two linked list*/
-		struct node *m = merge(head, head1);
+		/*struct node *m = merge(head, head1);
 
 while(m)
 	{
 		cout<<m->data<<" ";
 		m = m->next;
 	}
-	cout<<endl;
+	cout<<endl;*/
 
 	return 0;
 }
