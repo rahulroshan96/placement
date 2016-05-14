@@ -71,6 +71,7 @@ int height(struct node* root)
         return 1 + max(height(root->left),height(root->right));
     }
 }
+
 int height_q(struct node* root)
 {
     int level=0;
@@ -85,6 +86,7 @@ int height_q(struct node* root)
         myQ.pop();
         if(p!=NULL)
         {
+            cout<<p->data<<" ";            
             if(p->left) myQ.push(p->left);
             if(p->right) myQ.push(p->right);
         }
@@ -160,6 +162,33 @@ void findsum(struct node* root, int index)
 
 }
 
+/* Function to print tree by level order traversal*/
+
+void level(struct node *root)
+{
+    queue<struct node *> myQ;
+    myQ.push(root);
+    myQ.push(NULL);
+    while(!myQ.empty())
+    {
+        struct node *temp = myQ.front();
+        myQ.pop();
+        if(temp == NULL)
+            {
+                if(!myQ.empty()) // very important condition
+                myQ.push(NULL);
+            }
+        else
+        {
+            cout<<temp->data<<" ";
+            if(temp->left)
+            myQ.push(temp->left);
+            if(temp->right)
+            myQ.push(temp->right);
+        }
+    }
+}
+
 int main()
 {
     struct node* root=NULL;
@@ -186,7 +215,9 @@ int main()
   //  if(structure(root,root1))
    //     cout<<"similar";
     //else cout<<"not similar";
-    findsum(root,0);
+    //findsum(root,0);
+    //level(root);
+    diameter(root);
 
 
     return 0;
