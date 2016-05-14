@@ -1,8 +1,9 @@
 /* insert, delete, update, find, travel*/
-#include<iostream>
-#include<cstdlib>
-#include<queue>
-#include<map>
+#include <iostream>
+#include <cstdlib>
+#include <queue>
+#include <map>
+
 using namespace std;
 
 struct node
@@ -131,7 +132,7 @@ void finds(map<int,int> &mymap, struct node *root, int index)
 {
     if(root)
     {
-    auto it=mymap.begin();
+    map<int,int>::iterator it=mymap.begin();    
     it = mymap.find(index);
     if(it!=mymap.end())
     {
@@ -145,17 +146,20 @@ void finds(map<int,int> &mymap, struct node *root, int index)
     finds(mymap,root->right,index+1);
     }
 }
+
 void findsum(struct node* root, int index)
 {
     map<int,int> mymap;
     finds(mymap,root,index);
-    for(auto it=mymap.begin();it!=mymap.end();it++)
+    map<int,int>::iterator it;
+    for(it=mymap.begin();it!=mymap.end();it++)
     {
         cout<<(*it).first<<" "<<(*it).second;
         cout<<endl;
     }
 
 }
+
 int main()
 {
     struct node* root=NULL;
@@ -182,7 +186,6 @@ int main()
   //  if(structure(root,root1))
    //     cout<<"similar";
     //else cout<<"not similar";
-
     findsum(root,0);
 
 
