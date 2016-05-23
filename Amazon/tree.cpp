@@ -216,6 +216,26 @@ struct node *makelist(struct node *root)
 	return root;
 }
 
+// this function creates a full binary tree on given preorder and postorder traversal 
+struct node *createTreeFromPrePost(int *pre, int *post, int *preindex, int l, int h, int size)
+{
+	if(l>h || *preindex>=size)
+		return NULL;
+
+	struct node *root = getNode(pre[*preindex]);
+	++(*preindex);
+	int i=0;
+	for(i=l;i<h;i++)
+	{
+		if(pre[*preindex] == post[*preindex])
+			break;
+	}
+	root->left = createTreeFromPrePost(pre,post,preindex,l,i,size);
+	root->right = createTreeFromPrePost(pre, post, preindex, i+1, h, size);
+
+	return root;
+}
+
 int main()
 {
     struct node* root=NULL;
@@ -231,6 +251,7 @@ int main()
     root1->right = getNode(30);
     root1->right->right = getNode(40);
 
+/*
     struct node* head = makelist(root);
     for(;head->left;head = head->left);
     	while(head)
@@ -238,7 +259,7 @@ int main()
     		cout<<head->data;
     		head = head->right;
     	}
-
+*/
     //preorder(root);
     //postorder(root);
     //inorder(root);
@@ -254,6 +275,10 @@ int main()
     //level(root);
     //diameter(root);
 
-
+    int pre[]={1,2,4,8,9,5,3,6,7};
+    int post[]={8,9,4,5,2,6,7,3,1};
+    int preindex=0;
+    struct node *newTree=createTreeFromPrePost(pre,post,&preindex,0,8,9);
+    preorder(newTree);
     return 0;
 }
