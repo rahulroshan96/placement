@@ -189,20 +189,55 @@ void level(struct node *root)
     }
 }
 
+// this will convert tree to DLL
+struct node *makelist(struct node *root)
+{
+	if(!root) return root;
+
+	if(root->left)
+	{
+		struct node *left = makelist(root->left);
+		for(;left->right;left=left->right);
+		{
+			left->right = root;
+			root->left = left;
+		}
+	}
+	if(root->right)
+	{
+		struct node *right = makelist(root->right);
+		for(;right->left;right=right->left);
+		{
+			right->left = root;
+			root->right = right;
+		}
+
+	}
+	return root;
+}
+
 int main()
 {
     struct node* root=NULL;
     root = getNode(10);
     root->left = getNode(20);
-    root->right = getNode(30);
-    root->right->right = getNode(40);
-    root->right->left = getNode(100);
+    root->left->right = getNode(30);
+    root->left->right->left = getNode(40);
+    root->left->right->left->right = getNode(50);
 
     struct node* root1 = NULL;
     root1 = getNode(10);
     root1->left = getNode(20);
     root1->right = getNode(30);
     root1->right->right = getNode(40);
+
+    struct node* head = makelist(root);
+    for(;head->left;head = head->left);
+    	while(head)
+    	{
+    		cout<<head->data;
+    		head = head->right;
+    	}
 
     //preorder(root);
     //postorder(root);
@@ -217,7 +252,7 @@ int main()
     //else cout<<"not similar";
     //findsum(root,0);
     //level(root);
-    diameter(root);
+    //diameter(root);
 
 
     return 0;
