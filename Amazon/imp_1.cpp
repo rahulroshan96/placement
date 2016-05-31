@@ -22,3 +22,9 @@ unsigned long long combinations(unsigned k, unsigned long long *arr, unsigned n)
     }
     return combs;
 }
+/*
+if k is very large, you can sort the numbers mod k, and then walk the sorted list 
+from both ends (after dealing with the 0 mod k values) towards the 
+middle (k/2 mod k). That's O(n log n), which is better then O(n^2), 
+assuming that your naive algorithm is really naive.
+*/
