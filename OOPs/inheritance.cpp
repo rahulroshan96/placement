@@ -7,7 +7,7 @@ class Base{
 		Base(){
 			cout<<"Base Class Constructor\n";
 		}
-		void setT(int n)
+		static void setT(int n)
 		{
 			t = n;
 		}
@@ -45,8 +45,12 @@ int main()
 	de.setT(100);
 	de.setD(200);
 
-	cout<<"T is "<<de.getT()<<endl;
-	cout<<"D is "<<de.getD()<<endl;
+	Derived dx;
+	dx.setT(500);
+	cout<<dx.getT();
+	cout<<de.getT();
+	/*cout<<"T is "<<de.getT()<<endl;
+	cout<<"D is "<<de.getD()<<endl;*/
 	return 0;
 }
 /*
