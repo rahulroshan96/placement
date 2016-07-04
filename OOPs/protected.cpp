@@ -1,4 +1,5 @@
 // in case of protected, the protected variable we can access by the derived class also.
+//http://imgur.com/T3Z5NSZ access specifiers details
 #include <iostream>
 using namespace std;
 
