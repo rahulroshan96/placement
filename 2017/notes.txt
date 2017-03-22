@@ -1,0 +1,17 @@
+- Sorting
+  - Bubble Sort, Insertion Sort, Selection Sort, Topological Sort, Quick Sort, Merge Sort, 2-way Merge Sort, Heap Sort, Radix Sort, Bucket Sort, Counting Sort, BST in-order Sort
+
+- Searching
+  - Binary Search, Linear Search
+
+- Data Structures
+  - Stack, Queue, Priority Queue, Heap, LinkedList, BST, Trie, Prefix/Suffix Tree, Graph, HashTable, HashMap, Set
+
+- Graph
+    - BFS, DFS, Topological Sort, Detect Cycle, Dijkstra, Bellman Ford, Floyd Warshal, Prim, Kruskal
+
+- Algorithmic Approaches
+  - Divide and Conquer, Greedy, Dynamic Programming
+
+- Other
+  - String Pattern Matching, Bit Magic

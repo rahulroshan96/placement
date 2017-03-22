@@ -1,0 +1,7 @@
+Virtualization
+	- What is virtualization
+	- Types of virtualization
+	- What is hypervisor
+	- Types of hypervisor
+	- what is cpu, application, server, network
+	- core,virtual cpu, cpu
