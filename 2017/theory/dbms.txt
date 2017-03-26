@@ -1,0 +1,59 @@
+Keys:
+	- Candidate key: unique, not null, also one of the key can be selected for primery key.
+	candidate key is minimal super key
+	
+	- Primary key: unique and not null. Known as entity integrity also.
+	
+	- Foreign key: a key in table that points to primary key in another table. Known as referencial integrity
+
+	- Composite key: using more than one attribute to create a key is called composite key
+
+	- Super key: lets say A, B and C are candidate keys, and D is non key attribute then A,B,C,AB,ABC,ABCD etc all are super keys. 
+
+	- Alternate key: Left over keys after selecting one of the candidate key for primery key from candidate keys set, remaining keys are alternate keys.
+
+	- Surrogate key: sometimes after combining all the columns we can not determine the row. In that case we add one key called surrogate key. e.g. serial number.
+
+
+Normalization: It is a process of reducing the redundancy by eliminating insertion, deletion and updation problems.
+
+	- Functional Dependencies:
+		- Partial Dependency: given AB is a key, and there is one FD B->C, that means a non-prime att. can be determined by a partial key. This is called partial dependency.
+
+		- Transitive FD: Given AB is a key. C and D are non prime att. and given C->D means a non prime att. determines non-prime att. called transitive FD.
+
+		- Full FD: remove one att. from LHS makes the whole FD invalid called full FD. e.g. AB->C. On removing B from FD makes this whole FD invalid.
+
+
+
+
+	- 1NF: An attribute can not hold multiple values.
+
+	- 2NF: 
+		- table is in 1NF
+		- and should be free from partial FD
+
+	- 3NF:
+		- should be in 2NF
+		- free from transitive FD
+
+	- BCNF:
+		- should be in 3NF
+		- all determinants should be keys(candidate keys)
+
+
+SQL:
+	- COMPONENTS: DDL, DML, DCL
+	- Queries: logical operators, range operators (between/ not between), set membership (IN/NOT IN), pattern matching(LIKE/ NOT LIKE e.g. %,_), group by, having, 
+	- e.g. select branch, count(rollno) from student group by branch
+	- e.g. select branch, count(rollno) from student group by branch having count(rollno)>100
+	- only IN/NOT IN, ANY,ALL, EXIST/NOT EXIST can be used in subqueries
+	- order of execution: FROM, NATURAL JOIN, WHERE, GROUP BY, HAVING, SELECT, ORDER BY, DISTINCT, TOP
+
+
+JOIN: get details from multiple tables
+	- select s.* from student s, library l where s.rollno == l.rollno // where can replace on
+	- SELF JOIN: 
+	- NATURAL:
+	- INNER:
+	- OUTER:
