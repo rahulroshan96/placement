@@ -1,0 +1,17 @@
+Sequence Containers(Stores Objects and Data):  implement data structures which can be accessed in a sequential manner.
+1. Vector
+2. List
+3. Deque
+4. Arrays
+5. Forward List
+
+Container Adaptors :  provide a different interface for sequential containers.
+6. Queue
+7. Priority_Queue
+8. Stack
+
+Associative Containers :  implement sorted data structures that can be quickly searched (O(log n) complexity).
+9. Set
+10. MultiSet
+11. Map 
+12. MultiMap
