@@ -15,7 +15,7 @@ int main(){
 
     vector<int> a(5,0);
     for(int i=0;i<5;i++){
-        a[i]=i+100; // we can use a.push_back(i+100) too but in that case i would come after all 0's
+        a[i]=i+100; // we can use a.push_back(i+100) too, but in that case i would come after all five 0's
     }
 
     vector<int>:: iterator i;
@@ -32,6 +32,6 @@ int main(){
         }
     }
     print_vector(M);
-    // cout<<"capacity: "<<a.capacity()<<endl;
+    cout<<M.capacity()<<endl;
     return 0;
 }
