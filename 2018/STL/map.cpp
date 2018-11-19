@@ -4,6 +4,8 @@
 using namespace std;
 
 int main(){
+
+
     map<int,int> mymap;
     mymap.insert(make_pair(1,100));
     map<int,int>::iterator it;
@@ -23,6 +25,7 @@ int main(){
     else{
         cout<<"element is present"<<endl;
     }
+
     return 0;
 }
 
